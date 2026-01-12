@@ -1,0 +1,27 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    //Esta es la tabla que relaciona muchas alergias al mismo producto o muchos productos con alergenos
+public function up(): void
+    {
+        Schema::create('product_allergen', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('product_id')->constrained('product')->onDelete('cascade');
+            $table->foreignId('allergen_id')->constrained('allergen')->onDelete('cascade');
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('product_allergen');
+    }
+};
