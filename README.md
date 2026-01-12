@@ -1,3 +1,4 @@
 ## Proyecto de Laravel
 
-Dispone de su propia api para crear uan pagina funcional. Principalmente es uan pafina de venta de productos.
+Dispone de su propia API para crear una pagina funcional. Principalmente es una página de venta de productos. 
+Siguen en proyección futura;)
