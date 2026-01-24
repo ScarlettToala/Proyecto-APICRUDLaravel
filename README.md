@@ -394,4 +394,4 @@ Ejemplo:
 ## Estado del Proyecto
 El proyecto se encuentra en desarrollo activo. Próximamente se implementarán funcionalidades adicionales como confirmación de correo electrónico y recuperación de contraseña.
 
->>>>>>> be68802ae65daa95414f60e82b1e9f4e25f631d7
+
