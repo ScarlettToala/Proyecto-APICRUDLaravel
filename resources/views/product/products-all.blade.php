@@ -7,7 +7,6 @@
     <section class="productos-section" style="padding-top: 50px;">
         <div class="titulo-link">
             <h2>🥗 Todos nuestros productos</h2>
-            <a href="/">Volver al inicio</a>
         </div>
 
         {{-- GRID COMPLETO --}}
@@ -50,23 +49,7 @@
 
 
     {{-- FOOTER --}}
-    <footer class="site-footer">
-        <img class="footer-bg" src="{{ asset('img/footer.png') }}" alt="Fondo del footer">
-        <div class="footer-container">
-            <div class="footer-links left">
-                <a href="#">SOBRE NOSOTROS</a>
-                <a href="#">COMIDA</a>
-                <a href="#">HISTORIAL</a>
-                <a href="#">ENVÍOS</a>
-            </div>
-
-            <div class="footer-links right">
-                <a href="#">MI CUENTA</a>
-                <a href="#">CONTACTO</a>
-                <a href="#">BLOG</a>
-            </div>
-        </div>
-    </footer>
+    <x-footer />
 @endsection
 
 
@@ -76,9 +59,76 @@
             background-color: #fff7ed;
             font-family: 'Inter', sans-serif;
         }
-        a{
+
+        a {
             text-decoration: none;
         }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            background-color: #fff7ed;
+            padding: 15px 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Listas */
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-left a,
+        .nav-right a,
+        .nav-right span {
+            text-decoration: none;
+            color: #004a34;
+            font-weight: 600;
+        }
+
+        /* Logo */
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        /* Botón logout */
+        .nav-right button {
+            background: none;
+            border: none;
+            color: #004a34;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-left,
+            .nav-right {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .nav-logo img {
+                height: 40px;
+            }
+        }
+
 
         /* ==== TITULOS ==== */
         .titulo-link {
@@ -92,20 +142,6 @@
             font-size: 2.5rem;
             color: #333;
             margin: 0;
-        }
-
-        .titulo-link a {
-            color: #000;
-            border: 2px solid #000;
-            padding: 10px 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            transition: background 0.3s;
-            font-weight: bold;
-        }
-
-        .titulo-link a:hover {
-            background: #efff00;
         }
 
         /* ==== GRID ==== */
@@ -146,52 +182,133 @@
         }
 
         /* ==== GRID ==== */
-.productos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-}
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
 
-/* ==== PRODUCTO CARD ==== */
-.producto-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 18px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
+        /* ==== PRODUCTO CARD ==== */
+        .producto-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
 
-/* Efecto hover */
-.producto-card:hover {
-    transform: scale(1.04);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-}
+        /* Efecto hover */
+        .producto-card:hover {
+            transform: scale(1.04);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+        }
 
-/* ==== IMÁGENES UNIFORMES ==== */
-.producto-card img {
-    width: 100%;
-    height: 180px;           /* 👈 TODAS MISMA ALTURA */
-    object-fit: cover;       /* 👈 Recorta la imagen sin deformarla */
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
+        /* ==== IMÁGENES UNIFORMES ==== */
+        .producto-card img {
+            width: 100%;
+            height: 180px;
+            /* 👈 TODAS MISMA ALTURA */
+            object-fit: cover;
+            /* 👈 Recorta la imagen sin deformarla */
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
 
-/* ==== TITULOS INTERNOS ==== */
-.producto-card h3 {
-    color: #222;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-}
+        /* ==== TITULOS INTERNOS ==== */
+        .producto-card h3 {
+            color: #222;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
 
-/* ==== PRECIO ==== */
-.producto-card p {
-    color: #d2e300;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
+        /* ==== PRECIO ==== */
+        .producto-card p {
+            color: #d2e300;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
 
+        /* ======== FOOTER ======== */
+        .site-footer {
+            position: relative;
+            background: #004a34;
+            padding: 60px 20px 80px;
+            overflow: hidden;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+            color: #f6f3e8;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: #f6f3e8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-logo {
+            position: absolute;
+            bottom: -105%;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+
+        .footer-logo img {
+            width: clamp(300px, 55vw, 800px);
+            height: auto;
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* ======== RESPONSIVE ======== */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-logo {
+                bottom: -45%;
+                display: flex;
+                justify-content: center
+            }
+
+            .footer-logo img {
+                width: 70%;
+                max-width: 320px;
+            }
+        }
     </style>
 @endpush

@@ -28,7 +28,9 @@
 
 
     <div class="nav-container">
+
         <ul class="nav-left">
+
             <li><a href="/productos">Comida</a></li>
             <li><a href="#">Historial</a></li>
             @if (Auth::check())
@@ -39,12 +41,12 @@
 
         <div class="nav-logo">
             <img src="img/LOGO.png" alt="Logo Kntina">
+
         </div>
 
         <ul class="nav-right">
             <li><a href="/buscar"><i class="fas fa-search"></i> Buscar</a></li>
             @if (Auth::check())
-                <span>Hola, {{ Auth::user()->name }}</span>
                 <li><a href="#"><i class="fas fa-user"></i> Perfil</a></li>
                 <form method="POST" action="{{ route('logout') }}" style="display:inline">
                     @csrf
@@ -54,5 +56,6 @@
                 <a href="{{ route('login') }}">Iniciar sesión</a>
             @endif
         </ul>
+
     </div>
 </header>

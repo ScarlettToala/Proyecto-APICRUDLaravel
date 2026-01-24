@@ -102,7 +102,73 @@
         a {
             text-decoration: none;
         }
+        
+        /* ===== HEADER ===== */
+        .site-header {
+            background-color: #fff7ed;
+            padding: 15px 40px;
+            border-bottom: 1px solid #eee;
+        }
 
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Listas */
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-left a,
+        .nav-right a,
+        .nav-right span {
+            text-decoration: none;
+            color: #004a34;
+            font-weight: 600;
+        }
+
+        /* Logo */
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        /* Botón logout */
+        .nav-right button {
+            background: none;
+            border: none;
+            color: #004a34;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-left,
+            .nav-right {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .nav-logo img {
+                height: 40px;
+            }
+        }
+
+        /* ===== BUSCADOR ===== */
         .buscador-section {
             background-color: #f8f6ed;
             min-height: auto;
@@ -255,10 +321,9 @@
         }
 
         .productos-grid {
-
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            /* tarjetas más pequeñas */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 15px;
             /* espacio más reducido entre tarjetas */
         }
@@ -267,8 +332,7 @@
             background: #fff;
             border-radius: 10px;
             text-align: center;
-            width: 30%;
-            /* menos padding que antes */
+            width: 80%;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
             /* sombra más ligera */
             transition: transform 0.2s ease;
@@ -319,6 +383,86 @@
 
             .filtro-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ======== FOOTER ======== */
+        .site-footer {
+            position: relative;
+            background: #004a34;
+            padding: 60px 20px 80px;
+            overflow: hidden;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+            color: #f6f3e8;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: #f6f3e8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-logo {
+            position: absolute;
+            bottom: -105%;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+
+        .footer-logo img {
+            width: clamp(300px, 55vw, 800px);
+            height: auto;
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* ======== RESPONSIVE ======== */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-logo {
+                bottom: -45%;
+                display: flex;
+                justify-content: center
+            }
+
+            .footer-logo img {
+                width: 70%;
+                max-width: 320px;
             }
         }
     </style>

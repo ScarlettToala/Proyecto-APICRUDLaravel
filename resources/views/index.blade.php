@@ -158,6 +158,21 @@
             }
         }
 
+        /* ======== SALUDO USUARIO ======== */
+        .user-greeting {
+            /* verde suave */
+            color: #11c222;
+            /* verde oscuro del header */
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+
+
 
         /* ======== PRODUCTOS ======== */
         a {

@@ -1,5 +1,6 @@
 # Proyecto API CRUD con Laravel
 
+<<<<<<< HEAD
 Este proyecto es una aplicación web que simula una tienda en línea, permitiendo a los usuarios interactuar con un catálogo de productos mediante una **API RESTful**. La aplicación utiliza Laravel y tecnologías modernas para ofrecer una experiencia fluida, segura y eficiente.
 
 ---
@@ -199,3 +200,7 @@ Ejemplo:
 ---
 ## Estado del Proyecto
 El proyecto se encuentra en desarrollo activo. Próximamente se implementarán funcionalidades adicionales como confirmación de correo electrónico y recuperación de contraseña.
+=======
+Dispone de su propia API para crear una pagina funcional. Principalmente es una página de venta de productos. 
+Siguen en proyección futura;)
+>>>>>>> 841ca1aabca35ffedabfccbb4b36f167ff389def

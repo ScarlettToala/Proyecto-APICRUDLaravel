@@ -16,7 +16,6 @@
         <ul class="nav-right">
             <li><a href="/buscar"><i class="fas fa-search"></i> Buscar</a></li>
             @if (Auth::check())
-                <span>Hola, {{ Auth::user()->name }}</span>
                 <li><a href="#"><i class="fas fa-user"></i> Perfil</a></li>
 
                 <form method="POST" action="{{ route('logout') }}" style="display:inline">

@@ -66,6 +66,72 @@
 
 @push('styles')
     <style>
+
+        /* ===== HEADER ===== */
+        .site-header {
+            background-color: #fff7ed;
+            padding: 15px 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Listas */
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-left a,
+        .nav-right a,
+        .nav-right span {
+            text-decoration: none;
+            color: #004a34;
+            font-weight: 600;
+        }
+
+        /* Logo */
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        /* Botón logout */
+        .nav-right button {
+            background: none;
+            border: none;
+            color: #004a34;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-left,
+            .nav-right {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .nav-logo img {
+                height: 40px;
+            }
+        }
+        /* ===== DETALLE PRODUCTO ===== */
         .detalle-producto {
             padding: 60px;
             background-color: #f8f5ed;
