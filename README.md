@@ -77,8 +77,9 @@ Para ejecutar el proyecto en un entorno local, siga los siguientes pasos:
 1. Clonar el repositorio:
   ```bash
   git clone https://github.com/ScarlettToala/Proyecto-APICRUDLaravel
+```
 
-2.Acceder al directorio del proyecto:
+2. Acceder al directorio del proyecto:
 ```bash
 cd Proyecto-APICRUDLaravel
 ```
