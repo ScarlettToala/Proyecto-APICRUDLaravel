@@ -1,397 +1,157 @@
 # Proyecto API CRUD con Laravel
-Este proyecto es una aplicación web desarrollada con **Laravel** que implementa una API RESTful para la gestión de productos en una tienda en línea. La aplicación permite a los usuarios ver, agregar, editar y eliminar productos a través de una interfaz de usuario intuitiva y atractiva.
+
+## Descripción General
+
+Este proyecto consiste en el desarrollo de una **aplicación web basada en Laravel** que implementa una **API RESTful** para la gestión de productos en una tienda en línea.  
+El sistema permite realizar operaciones CRUD (**Crear, Leer, Actualizar y Eliminar**) sobre los productos, integrando una interfaz de usuario clara y estructurada que facilita la interacción con la API.
+
+La aplicación sigue buenas prácticas de desarrollo web, separando responsabilidades entre frontend y backend, e incorporando mecanismos de validación y autenticación de usuarios.
+
+---
+
+## Objetivos del Proyecto
+
+### Objetivo General
+Desarrollar una API RESTful utilizando el framework Laravel que permita la gestión eficiente de productos dentro de una tienda en línea.
+
+### Objetivos Específicos
+- Implementar operaciones CRUD para la administración de productos.
+- Aplicar autenticación de usuarios para proteger rutas sensibles.
+- Validar la información enviada desde el frontend antes de su procesamiento.
+- Diseñar una interfaz de usuario intuitiva para la visualización y gestión de productos.
+- Integrar una cesta de compras asociada a usuarios autenticados.
+
+---
 
 ## Tecnologías Utilizadas
 
-### Frontend
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![Blade](https://img.shields.io/badge/Blade-Laravel-red?style=for-the-badge)
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+### Frontend 
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) 
+![Blade](https://img.shields.io/badge/Blade-Laravel-red?style=for-the-badge) 
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) 
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) 
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) 
 
-### Backend
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+### Backend 
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) 
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white) 
 
-### Base de Datos
+### Base de Datos 
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+
 ---
 
-## Características Principales
+## Características del Sistema
 
 - **API RESTful**  
-  Implementa los métodos **GET, POST, PUT y DELETE** para la gestión de productos.
+  Implementación de los métodos HTTP **GET, POST, PUT y DELETE** para la gestión de recursos.
 
 - **Gestión de Productos**  
-  Permite agregar, editar y eliminar productos desde el frontend.
-
-- **Interfaz de Usuario**  
-  Muestra los productos de forma clara y atractiva, facilitando la navegación y búsqueda.
-
-- **Validación de Datos**  
-  Verifica que los datos ingresados sean correctos antes de ser procesados por la API.
+  Permite crear, consultar, actualizar y eliminar productos desde la interfaz web.
 
 - **Autenticación de Usuarios**  
-  Los usuarios deben registrarse e iniciar sesión para realizar acciones dentro de la tienda.
+  Sistema de registro e inicio de sesión para controlar el acceso a funcionalidades protegidas.
+
+- **Validación de Datos**  
+  Control de integridad y consistencia de los datos antes de ser almacenados en la base de datos.
+
+- **Cesta de Compras**  
+  Gestión de productos seleccionados por el usuario autenticado.
 
 ---
 
-## Instalación
+## Requisitos del Sistema
 
-> Para ejecutar este proyecto puedes usar un servidor local como **XAMPP**, **WAMP** o **Laravel Herd**.  
-> El proyecto requiere **PHP**, **Composer** y **Node.js (npm)**.
+- PHP >= 8.0  
+- Composer  
+- Node.js y npm  
+- MySQL  
+- Servidor local (XAMPP, WAMP o Laravel Herd)
 
-Sigue estos pasos para ejecutar el proyecto en tu máquina local:
+---
 
-1. Clona el repositorio:
+## Instalación y Configuración
+
+Para ejecutar el proyecto en un entorno local, siga los siguientes pasos:
+
+1. Clonar el repositorio:
    ```bash
    git clone https://github.com/ScarlettToala/Proyecto-APICRUDLaravel
 
-2. Accede al directorio del proyecto:
-    ```bash
-    cd Proyecto-APICRUDLaravel
-    ```
-
-3. Instala las dependencias de PHP usando Composer:
-    ```bash
-    composer install
-    ```
-
-4. Instala las dependencias de JavaScript usando npm:
-    ```bash
-    npm install
-    ```
-
-5. Configura el archivo `.env`:
-    - Copia el archivo `.env.example` y renómbralo a `.env`.
-
-Ejemplo:
-    ```bash
-    cp .env.example .env
-    ```
-    - Configura las variables de entorno, especialmente las relacionadas con la base de datos.
-
-6. Genera la clave de la aplicación:
-    ```bash
-    php artisan key:generate
-    ```
-
-7. Ejecuta las migraciones para crear las tablas en la base de datos:
-    ```bash
-    php artisan migrate
-    ```
-
-8. Compila los activos de frontend:
-    ```bash
-    php artisan serve
-    ```
-9. Abrir el navegador
-    - Accede a `http://localhost:8000` para ver la aplicación en funcionamiento.
-
----
-
-## Endpoints de la API
-
-### Productos (Públicos)
-
-#### Obtener todos los productos
-- **Método:** GET  
-- **URL:** `/productos`  
-- **Descripción:** Devuelve la lista completa de productos disponibles.
-
----
-
-#### Obtener un producto por ID
-- **Método:** GET  
-- **URL:** `/productos/{id}`  
-- **Parámetros de ruta:**
-  - `id` (integer) — ID del producto
-- **Descripción:** Devuelve la información detallada de un producto específico.
-
----
-
-#### Vista principal (Home)
-- **Método:** GET  
-- **URL:** `/`  
-- **Descripción:** Muestra la página principal con productos destacados.
-
----
-
-#### Buscar productos
-- **Método:** GET  
-- **URL:** `/buscar`  
-- **Parámetros de consulta (query):**
-  - `q` (string) — Término de búsqueda
-- **Descripción:** Permite buscar productos por nombre o categoría.
-
----
-
-### Autenticación
-
-#### Mostrar formulario de login
-- **Método:** GET  
-- **URL:** `/login`  
-- **Descripción:** Muestra el formulario de inicio de sesión.
-
----
-
-#### Iniciar sesión
-- **Método:** POST  
-- **URL:** `/login`  
-- **Body (form-data):**
-  - `email` (string)
-  - `password` (string)
-- **Descripción:** Autentica al usuario y crea una sesión.
-
----
-
-#### Cerrar sesión
-- **Método:** POST  
-- **URL:** `/logout`  
-- **Autenticación:** Requiere sesión activa  
-- **Descripción:** Cierra la sesión del usuario autenticado.
-
-
-### Cesta de Compras (Rutas Protegidas)
-
-> Estas rutas requieren que el usuario esté autenticado.
-
-#### Ver cesta de compras
-- **Método:** GET  
-- **URL:** `/cesta`  
-- **Descripción:** Muestra los productos añadidos a la cesta del usuario.
-
-
----
-
-#### Agregar producto a la cesta
-- **Método:** POST  
-- **URL:** `/cesta/add`  
-- **Body (form-data o JSON):**
-  - `product_id` (integer)
-  - `quantity` (integer)
-- **Descripción:** Agrega un producto a la cesta de compras.
-
----
-
-#### Actualizar producto de la cesta
-- **Método:** PUT  
-- **URL:** `/cesta/{cesta}`  
-- **Parámetros de ruta:**
-  - `cesta` (integer) — ID del registro en la cesta
-- **Body:**
-  - `quantity` (integer)
-- **Descripción:** Actualiza la cantidad de un producto en la cesta.
-
----
-
-#### Eliminar producto de la cesta
-- **Método:** DELETE  
-- **URL:** `/cesta/{cesta}`  
-- **Parámetros de ruta:**
-  - `cesta` (integer)
-- **Descripción:** Elimina un producto de la cesta de compras.
-
----
-## Estado del Proyecto
-El proyecto se encuentra en desarrollo activo. Próximamente se implementarán funcionalidades adicionales como confirmación de correo electrónico y recuperación de contraseña.
-
-
-## Tecnologías Utilizadas
-
-### Frontend
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![Blade](https://img.shields.io/badge/Blade-Laravel-red?style=for-the-badge)
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-### Backend
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-
-### Base de Datos
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
----
-
-## Características Principales
-
-- **API RESTful**  
-  Implementa los métodos **GET, POST, PUT y DELETE** para la gestión de productos.
-
-- **Gestión de Productos**  
-  Permite agregar, editar y eliminar productos desde el frontend.
-
-- **Interfaz de Usuario**  
-  Muestra los productos de forma clara y atractiva, facilitando la navegación y búsqueda.
-
-- **Validación de Datos**  
-  Verifica que los datos ingresados sean correctos antes de ser procesados por la API.
-
-- **Autenticación de Usuarios**  
-  Los usuarios deben registrarse e iniciar sesión para realizar acciones dentro de la tienda.
-
----
-
-## Instalación
-
-> Para ejecutar este proyecto puedes usar un servidor local como **XAMPP**, **WAMP** o **Laravel Herd**.  
-> El proyecto requiere **PHP**, **Composer** y **Node.js (npm)**.
-
-Sigue estos pasos para ejecutar el proyecto en tu máquina local:
-
-1. Clona el repositorio:
+2.Acceder al directorio del proyecto:
    ```bash
-   git clone https://github.com/ScarlettToala/Proyecto-APICRUDLaravel
+   cd Proyecto-APICRUDLaravel
+   ```
 
-2. Accede al directorio del proyecto:
-    ```bash
-    cd Proyecto-APICRUDLaravel
-    ```
-
-3. Instala las dependencias de PHP usando Composer:
-    ```bash
+3. Instalar las dependencias de PHP:
+   ```bash
     composer install
     ```
+4. Instalar las dependencias de JavaScript:
+   ```bash
+   npm install
+   ```  
+5. Configurar el archivo `.env`:
+   - Copiar el archivo `.env.example` y renombrarlo a `.env`.
 
-4. Instala las dependencias de JavaScript usando npm:
-    ```bash
-    npm install
+6. Generar la clave de la aplicación:
+   ```bash
+   php artisan key:generate
+   ```
+7. Ejecutar las migraciones::
+   ``
+   php artisan migrate
+```
+8. Iniciar el servidor de desarrollo:
+   ```bash
+   php artisan serve
+   ```
+9. Acceder a la aplicación desde el navegador:
+   ```
+    http://localhost:8000
     ```
-
-5. Configura el archivo `.env`:
-    - Copia el archivo `.env.example` y renómbralo a `.env`.
-
-Ejemplo:
-    ```bash
-    cp .env.example .env
-    ```
-    - Configura las variables de entorno, especialmente las relacionadas con la base de datos.
-
-6. Genera la clave de la aplicación:
-    ```bash
-    php artisan key:generate
-    ```
-
-7. Ejecuta las migraciones para crear las tablas en la base de datos:
-    ```bash
-    php artisan migrate
-    ```
-
-8. Compila los activos de frontend:
-    ```bash
-    php artisan serve
-    ```
-9. Abrir el navegador
-    - Accede a `http://localhost:8000` para ver la aplicación en funcionamiento.
-
+Usuario registrado para pruebas:
+- Email: scarlett@gmail.org
+- Password: 1234
 ---
+### EndPoints de la API:
+--
+#### Productos(Acceso Público):
+| Método | Endpoint          | Descripción                     |
+| ------ | ----------------- | ------------------------------- |
+| GET    | `/productos`      | Obtiene el listado de productos |
+| GET    | `/productos/{id}` | Obtiene un producto por su ID   |
+| GET    | `/`               | Vista principal del sistema     |
+| GET    | `/buscar?q=`      | Búsqueda de productos           |
 
-## Endpoints de la API
+####Autenticación
 
-### Productos (Públicos)
+| Método | Endpoint  | Descripción                    |
+| ------ | --------- | ------------------------------ |
+| GET    | `/login`  | Formulario de inicio de sesión |
+| POST   | `/login`  | Autenticación de usuario       |
+| POST   | `/logout` | Cierre de sesión               |
 
-#### Obtener todos los productos
-- **Método:** GET  
-- **URL:** `/productos`  
-- **Descripción:** Devuelve la lista completa de productos disponibles.
+#### Cesta de Compras (Rutas Protegidas)
+| Método | Endpoint         | Descripción                          |
+| ------ | ---------------- | ------------------------------------ |
+| GET    | `/cesta`         | Visualiza la cesta del usuario       |
+| POST   | `/cesta/add`     | Agrega un producto a la cesta        |
+| PUT    | `/cesta/{cesta}` | Actualiza la cantidad de un producto |
+| DELETE | `/cesta/{cesta}` | Elimina un producto de la cesta      |
 
----
-
-#### Obtener un producto por ID
-- **Método:** GET  
-- **URL:** `/productos/{id}`  
-- **Parámetros de ruta:**
-  - `id` (integer) — ID del producto
-- **Descripción:** Devuelve la información detallada de un producto específico.
-
----
-
-#### Vista principal (Home)
-- **Método:** GET  
-- **URL:** `/`  
-- **Descripción:** Muestra la página principal con productos destacados.
-
----
-
-#### Buscar productos
-- **Método:** GET  
-- **URL:** `/buscar`  
-- **Parámetros de consulta (query):**
-  - `q` (string) — Término de búsqueda
-- **Descripción:** Permite buscar productos por nombre o categoría.
-
----
-
-### Autenticación
-
-#### Mostrar formulario de login
-- **Método:** GET  
-- **URL:** `/login`  
-- **Descripción:** Muestra el formulario de inicio de sesión.
-
----
-
-#### Iniciar sesión
-- **Método:** POST  
-- **URL:** `/login`  
-- **Body (form-data):**
-  - `email` (string)
-  - `password` (string)
-- **Descripción:** Autentica al usuario y crea una sesión.
-
----
-
-#### Cerrar sesión
-- **Método:** POST  
-- **URL:** `/logout`  
-- **Autenticación:** Requiere sesión activa  
-- **Descripción:** Cierra la sesión del usuario autenticado.
-
-
-### Cesta de Compras (Rutas Protegidas)
-
-> Estas rutas requieren que el usuario esté autenticado.
-
-#### Ver cesta de compras
-- **Método:** GET  
-- **URL:** `/cesta`  
-- **Descripción:** Muestra los productos añadidos a la cesta del usuario.
-
-
----
-
-#### Agregar producto a la cesta
-- **Método:** POST  
-- **URL:** `/cesta/add`  
-- **Body (form-data o JSON):**
-  - `product_id` (integer)
-  - `quantity` (integer)
-- **Descripción:** Agrega un producto a la cesta de compras.
-
----
-
-#### Actualizar producto de la cesta
-- **Método:** PUT  
-- **URL:** `/cesta/{cesta}`  
-- **Parámetros de ruta:**
-  - `cesta` (integer) — ID del registro en la cesta
-- **Body:**
-  - `quantity` (integer)
-- **Descripción:** Actualiza la cantidad de un producto en la cesta.
-
----
-
-#### Eliminar producto de la cesta
-- **Método:** DELETE  
-- **URL:** `/cesta/{cesta}`  
-- **Parámetros de ruta:**
-  - `cesta` (integer)
-- **Descripción:** Elimina un producto de la cesta de compras.
-
----
+-----
 ## Estado del Proyecto
-El proyecto se encuentra en desarrollo activo. Próximamente se implementarán funcionalidades adicionales como confirmación de correo electrónico y recuperación de contraseña.
 
+El proyecto se encuentra en fase de desarrollo activo.
+Se contempla la implementación futura de las siguientes funcionalidades:
 
+* Confirmación de correo electrónico
+
+* Registro de usuarios
+
+* Recuperación de contraseña
+
+* Mejora de seguridad y control de permisos
+
+* Optimización del rendimiento del sistema
