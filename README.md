@@ -127,7 +127,7 @@ Usuario registrado para pruebas:
 | GET    | `/`               | Vista principal del sistema     |
 | GET    | `/buscar?q=`      | Búsqueda de productos           |
 
-####Autenticación
+#### Autenticación
 
 | Método | Endpoint  | Descripción                    |
 | ------ | --------- | ------------------------------ |
