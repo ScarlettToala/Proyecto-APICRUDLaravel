@@ -75,47 +75,50 @@ Desarrollar una API RESTful utilizando el framework Laravel que permita la gesti
 Para ejecutar el proyecto en un entorno local, siga los siguientes pasos:
 
 1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/ScarlettToala/Proyecto-APICRUDLaravel
+  ```bash
+  git clone https://github.com/ScarlettToala/Proyecto-APICRUDLaravel
 
 2.Acceder al directorio del proyecto:
-   ```bash
-   cd Proyecto-APICRUDLaravel
-   ```
+```bash
+cd Proyecto-APICRUDLaravel
+```
 
 3. Instalar las dependencias de PHP:
-   ```bash
-    composer install
-    ```
+```bash
+composer install
+```
+
 4. Instalar las dependencias de JavaScript:
-   ```bash
-   npm install
-   ```  
+```bash
+npm install
+```  
 5. Configurar el archivo `.env`:
-   - Copiar el archivo `.env.example` y renombrarlo a `.env`.
+- Copiar el archivo `.env.example` y renombrarlo a `.env`.
 
 6. Generar la clave de la aplicación:
-   ```bash
-   php artisan key:generate
-   ```
-7. Ejecutar las migraciones::
-   ``
-   php artisan migrate
+```bash
+php artisan key:generate
 ```
+7. Ejecutar las migraciones::
+```bash
+php artisan migrate
+```
+
 8. Iniciar el servidor de desarrollo:
-   ```bash
-   php artisan serve
-   ```
+```bash
+php artisan serve
+```
 9. Acceder a la aplicación desde el navegador:
-   ```
-    http://localhost:8000
-    ```
+```
+http://localhost:8000
+```
+---
 Usuario registrado para pruebas:
 - Email: scarlett@gmail.org
 - Password: 1234
 ---
 ### EndPoints de la API:
---
+
 #### Productos(Acceso Público):
 | Método | Endpoint          | Descripción                     |
 | ------ | ----------------- | ------------------------------- |
