@@ -10,10 +10,13 @@
     @stack('scrypt')
     @stack('styles')
 </head>
+
 <body>
     <main>
+
         @yield('content')
     </main>
 
 </body>
+
 </html>

@@ -54,9 +54,7 @@ class ShoppingController extends Controller
             ]);
         }
 
-        return redirect()
-            ->route('home')
-            ->with('success', 'Producto añadido a la cesta correctamente ✅');
+        return back()->with('success', '🛒 ¡Ya está en tu cesta!');
     }
 
     /**

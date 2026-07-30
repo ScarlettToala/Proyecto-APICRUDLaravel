@@ -3,7 +3,7 @@
 @section('content')
     <!-- Header-->
     <x-header />
-    
+
 
     <section class="detalle-producto">
         <div class="detalle-container">
@@ -66,7 +66,6 @@
 
 @push('styles')
     <style>
-
         /* ===== HEADER ===== */
         .site-header {
             background-color: #fff7ed;
@@ -131,6 +130,7 @@
                 height: 40px;
             }
         }
+
         /* ===== DETALLE PRODUCTO ===== */
         .detalle-producto {
             padding: 60px;
@@ -341,6 +341,40 @@
 
             .galeria-collage {
                 max-width: 350px;
+            }
+        }
+
+        /*=ESTILOS MENSAJE CARRITO=*/
+        .toast-success {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #0f8b5f;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+            z-index: 9999;
+            animation: slideIn .4s ease, fadeOut .5s ease 3s forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: translateX(100%);
             }
         }
     </style>

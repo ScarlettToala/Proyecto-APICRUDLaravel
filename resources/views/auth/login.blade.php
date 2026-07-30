@@ -172,11 +172,11 @@
             transform: translateY(-2px);
         }
 
-        /* ======== FOOTER COMPACTO ======== */
+                /* ======== FOOTER ======== */
         .site-footer {
+            position: relative;
             background: #004a34;
-            padding: 20px 20px;
-            /* menos padding arriba y abajo */
+            padding: 60px 20px 80px;
             overflow: hidden;
         }
 
@@ -186,38 +186,44 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 20px;
-            /* menos espacio entre columnas */
+            gap: 40px;
+            position: relative;
+            z-index: 2;
             color: #f6f3e8;
         }
 
         .footer-links {
             display: flex;
             flex-direction: column;
-            gap: 5px;
-            /* menos espacio entre enlaces */
+            gap: 10px;
         }
 
         .footer-links a {
             color: #f6f3e8;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             letter-spacing: 0.5px;
             transition: opacity 0.3s;
         }
 
-        .footer-logo {
-            position: static;
-            /* ya no lo bajamos tanto */
-            transform: none;
-            display: block;
-            margin: 0 auto;
+        .footer-links a:hover {
+            opacity: 0.8;
         }
 
+        .footer-logo {
+            position: absolute;
+            bottom: -105%;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+
         .footer-logo img {
-            width: clamp(150px, 30vw, 300px);
-            /* más pequeño */
+            width: clamp(300px, 55vw, 800px);
             height: auto;
+            max-width: 100%;
+            display: block;
         }
 
 
@@ -245,7 +251,6 @@
                 max-width: 320px;
             }
         }
-
         /* ===========================
             BOTÓN VOLVER HOME
 =========================== */

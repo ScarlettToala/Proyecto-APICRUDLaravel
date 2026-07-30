@@ -1,4 +1,31 @@
 <header class="site-header">
+
+    @if (session('success'))
+        <div id="alert-success" class="alert alert-success"
+            style="
+        background: #e9fff1;
+        color: #006a4a;
+        border: 1px solid #00a86b;
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    ">
+            {{ session('success') }}
+        </div>
+
+        <script>
+            // Espera 15 segundos (15000 milisegundos) y luego oculta el mensaje
+            setTimeout(function() {
+                const alertDiv = document.getElementById('alert-success');
+                if (alertDiv) {
+                    alertDiv.style.transition = "opacity 0.5s ease";
+                    alertDiv.style.opacity = 0;
+                    setTimeout(() => alertDiv.remove(), 500); // remueve el div después de la transición
+                }
+            }, 1000);
+        </script>
+    @endif
+    
     <div class="nav-container">
         <ul class="nav-left">
             <li><a href="/">Inicio</a></li>

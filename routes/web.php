@@ -14,6 +14,7 @@ Route::get('/', [ProductController::class, 'index'])->name('home');
 /*Visualización Detalle producto*/
 Route::get('/productos/{id}', [ProductController::class, 'show'])->name('productos.show');
 
+
 /*Visualización de TODOS los PRODUCTOS*/
 Route::get('/productos', [ProductController::class, 'all'])->name('productos.todos');
 
@@ -41,3 +42,4 @@ Route::middleware('auth')->group(function () {
     // Cerrar sesión
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
+

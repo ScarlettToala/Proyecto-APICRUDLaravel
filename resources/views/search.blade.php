@@ -322,7 +322,7 @@
 
         .productos-grid {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             justify-content: center;
             gap: 15px;
             /* espacio más reducido entre tarjetas */

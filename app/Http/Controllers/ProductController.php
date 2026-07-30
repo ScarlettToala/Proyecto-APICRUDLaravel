@@ -128,4 +128,11 @@ class ProductController extends Controller
 
         return view('search', compact('productos', 'alergenos', 'categorias'));
     }
+
+    public function apiProductos()
+{
+    return response()->json(
+        Product::with('category', 'allergens')->get()
+    );
+}
 }

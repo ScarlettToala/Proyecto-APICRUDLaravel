@@ -62,13 +62,13 @@
         .hero-banner {
             background-size: cover;
             background-position: center;
-            width: 100%;
             min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: flex-start;
             color: #fff;
-            padding: 20px 40px;
+            padding: 20px;
+            width: 97%;
         }
 
         .hero-content h1 {
